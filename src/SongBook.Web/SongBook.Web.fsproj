@@ -1,0 +1,25 @@
+<Project Sdk="Microsoft.NET.Sdk.Web">
+  <PropertyGroup>
+    <TargetFramework>net8.0</TargetFramework>
+    <AssemblyName>SongBook.Web</AssemblyName>
+    <EnableDefaultContentItems>false</EnableDefaultContentItems>
+    <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
+  </PropertyGroup>
+  <ItemGroup>
+    <PackageReference Include="Giraffe" Version="6.4.0" />
+    <PackageReference Include="Giraffe.ViewEngine" Version="1.4.*" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Chords.fs" />
+    <Compile Include="Program.fs" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="web.config" CopyToOutputDirectory="PreserveNewest" />
+    <Content Include="WebRoot\**\*">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>    
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Chords\Chords.fsproj" />
+  </ItemGroup>
+</Project>

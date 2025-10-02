@@ -1,0 +1,29 @@
+<Project Sdk="Microsoft.NET.Sdk">
+  <PropertyGroup>
+    <OutputType>Exe</OutputType>
+    <TargetFramework>net8.0</TargetFramework>
+  </PropertyGroup>
+  <ItemGroup>
+    <Compile Include="Services.fs" />
+    <Compile Include="Extensions.fs" />
+    <Compile Include="Home.fs" />
+    <Compile Include="Chords.fs" />
+    <Compile Include="About.fs" />
+    <Compile Include="Shell.fs" />
+    <Compile Include="Program.fs" />
+    <AvaloniaResource Include="**\*.xaml" />
+  </ItemGroup>
+  <ItemGroup>
+    <PackageReference Include="Avalonia.Desktop" Version="11.3.6" />
+    <PackageReference Include="Avalonia.Svg" Version="11.3.0" />
+    <PackageReference Include="Avalonia.Themes.Fluent" Version="11.3.6" />
+    <PackageReference Include="Avalonia.Diagnostics" Version="11.3.6" />
+    <PackageReference Include="Avalonia.FuncUI" Version="1.5.1" />
+    <PackageReference Include="Avalonia.FuncUI.Elmish" Version="1.5.1" />
+    <PackageReference Include="FluentIcons.Avalonia" Version="1.1.310" />
+    <PackageReference Include="Microsoft.Extensions.DependencyInjection" Version="9.0.9" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Chords\Chords.fsproj" />
+  </ItemGroup>
+</Project>

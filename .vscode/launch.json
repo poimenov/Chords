@@ -1,0 +1,43 @@
+{
+    "version": "0.2.0",
+    "configurations": [
+        {
+            "name": "Launch SongBook.Photino",
+            "type": "coreclr",
+            "request": "launch",
+            "preLaunchTask": "build",
+            "program": "${workspaceFolder}/src/SongBook.Photino/bin/Debug/net8.0/SongBook.Photino.dll",
+            "args": [],
+            "cwd": "${workspaceFolder}/src/SongBook.Photino",
+            "stopAtEntry": false,
+            "console": "internalConsole"
+        },
+        {
+            "name": "Launch SongBook.Avalonia",
+            "type": "coreclr",
+            "request": "launch",
+            "preLaunchTask": "build",
+            "program": "${workspaceFolder}/src/SongBook.Avalonia/bin/Debug/net8.0/SongBook.Avalonia.dll",
+            "args": [],
+            "cwd": "${workspaceFolder}/src/SongBook.Avalonia",
+            "stopAtEntry": false,
+            "console": "internalConsole"
+        },
+        {
+            "name": "Launch SongBook.Web",
+            "type": "coreclr",
+            "request": "launch",
+            "preLaunchTask": "build",
+            "program": "${workspaceFolder}/src/SongBook.Web/bin/Debug/net8.0/SongBook.Web.dll",
+            "cwd": "${workspaceFolder}/src/SongBook.Web",
+            "env": {
+                "ASPNETCORE_ENVIRONMENT": "Development",
+                "ASPNETCORE_URLS": "http://localhost:5062"
+            },
+            "stopAtEntry": false,
+            "launchBrowser": {
+                "enabled": true
+            },
+        },
+    ]
+}
