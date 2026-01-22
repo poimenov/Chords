@@ -1,0 +1,6 @@
+﻿<Solution>
+<Project Path="src\Chords\Chords.fsproj" />
+<Project Path="src\SongBook.Photino\SongBook.Photino.fsproj" />
+<Project Path="src\SongBook.Avalonia\SongBook.Avalonia.fsproj" />
+<Project Path="src\SongBook.Web\SongBook.Web.fsproj" />
+</Solution>
