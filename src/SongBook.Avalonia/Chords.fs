@@ -104,14 +104,26 @@ module Chords =
                       DockPanel.verticalAlignment VerticalAlignment.Stretch
                       DockPanel.margin (0.0, 5.0, 0.0, 0.0)
                       DockPanel.children
-                          [ StackPanel.create
+                          [ Grid.create
                                 [ DockPanel.dock Dock.Top
-                                  StackPanel.children
+                                  Grid.rowDefinitions "Auto,Auto,*"
+                                  Grid.columnDefinitions "Auto,*"
+                                  Grid.children
                                       [ TextBlock.create
-                                            [ TextBlock.classes [ "title" ]
+                                            [ Grid.row 0
+                                              Grid.column 0
+                                              TextBlock.classes [ "title" ]
                                               TextBlock.text $"Аккорды: {Convert.ToString selectedBaseNote.Current}" ]
+                                        TextBlock.create
+                                            [ Grid.row 1
+                                              Grid.column 0
+                                              TextBlock.margin (4, 0, 0, 0)
+                                              TextBlock.verticalAlignment VerticalAlignment.Center
+                                              TextBlock.text "Базовая нота:" ]
                                         ComboBox.create
-                                            [ ComboBox.margin 4
+                                            [ Grid.row 1
+                                              Grid.column 1
+                                              ComboBox.margin 4
                                               ComboBox.width 100
                                               ComboBox.dataItems allBaseNotes
                                               ComboBox.selectedItem selectedBaseNote.Current
@@ -128,7 +140,10 @@ module Chords =
                                                             TextBlock.textAlignment TextAlignment.Right ])
                                               ) ]
                                         DataGrid.create
-                                            [ DataGrid.isReadOnly true
+                                            [ Grid.row 2
+                                              Grid.columnSpan 2
+                                              DataGrid.isReadOnly true
+                                              DataGrid.margin 4
                                               DataGrid.headersVisibility DataGridHeadersVisibility.None
                                               DataGrid.items (getChordDiagrams selectedBaseNote.Current)
                                               DataGrid.columns
@@ -137,7 +152,5 @@ module Chords =
                                                     getImageColumn 1
                                                     getImageColumn 2
                                                     getImageColumn 3
-                                                    getImageColumn 4 ] ]
-
-                                        ] ] ] ]
+                                                    getImageColumn 4 ] ] ] ] ] ]
         )

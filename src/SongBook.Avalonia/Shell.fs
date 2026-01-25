@@ -141,7 +141,7 @@ module Shell =
 
         do
             base.Title <- "Full App"
-            base.Width <- 800.0
+            base.Width <- 900.0
             base.Height <- 600.0
             base.MinWidth <- 800.0
             base.MinHeight <- 600.0
